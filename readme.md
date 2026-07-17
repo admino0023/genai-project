@@ -1,123 +1,221 @@
-# ESP32 Datasheet RAG Chatbot
+# 🤖 Agentic AI Assistant
 
-## Overview
+An AI-powered chatbot built with **Streamlit**, **LangChain**, and **Ollama**. This project demonstrates an Agentic AI workflow by enabling users to interact with a locally hosted Large Language Model (LLM) through a clean web interface.
 
-The ESP32 Datasheet RAG Chatbot is a Retrieval-Augmented Generation (RAG) application that allows users to ask questions about the ESP32 datasheet in natural language. The chatbot retrieves the most relevant information from the datasheet using semantic search and provides accurate responses based on the document.
+---
 
-## Features
+## 🚀 Features
 
-* Load and process the ESP32 datasheet (PDF)
-* Split the document into manageable text chunks
-* Generate embeddings using Sentence Transformers
-* Store embeddings in a FAISS vector database
-* Perform semantic similarity search
-* Retrieve relevant datasheet content for user queries
-* Easy to extend with LLMs such as Gemini, OpenAI, or Ollama
+- 💬 Interactive chatbot using Streamlit
+- 🤖 Local LLM integration with Ollama
+- 🧠 Prompt management using LangChain
+- ⚡ Fast and lightweight
+- 🔒 Privacy-focused (runs locally)
+- 🖥️ Simple and user-friendly interface
+- 🔄 Easy to customize and extend
 
-## Technologies Used
+---
 
-* Python
-* LangChain
-* FAISS
-* Hugging Face Sentence Transformers
-* PyPDF
-* VS Code
+## 🛠️ Tech Stack
 
-## Project Structure
+- Python
+- Streamlit
+- LangChain
+- LangChain Community
+- Ollama
+- Gemma 2 (or any Ollama-supported model)
 
-```text
-ESP32-RAG-Chatbot/
+---
+
+## 📁 Project Structure
+
+```
+Agentic-AI/
 │
-├── esp32_datasheet_en.pdf
 ├── app.py
 ├── requirements.txt
-├── faiss_index/
 ├── README.md
-└── myenv/
+├── .gitignore
+└── screenshots/
 ```
 
-## Installation
+---
 
-1. Clone the repository:
+## 📋 Prerequisites
+
+Before running the project, make sure you have:
+
+- Python 3.10 or later
+- Ollama installed
+- Git installed
+
+---
+
+## ⚙️ Installation
+
+### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/ESP32-RAG-Chatbot.git
+git clone https://github.com/YOUR_USERNAME/Agentic-AI.git
+cd Agentic-AI
 ```
 
-2. Navigate to the project folder:
-
-```bash
-cd ESP32-RAG-Chatbot
-```
-
-3. Create a virtual environment:
-
-```bash
-python -m venv myenv
-```
-
-4. Activate the virtual environment:
+### Create a Virtual Environment
 
 **Windows**
 
 ```bash
+python -m venv myenv
 myenv\Scripts\activate
 ```
 
-5. Install the required packages:
+**Linux/macOS**
+
+```bash
+python3 -m venv myenv
+source myenv/bin/activate
+```
+
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage
+---
 
-Run the application:
+## 🤖 Install Ollama
+
+Download Ollama from:
+
+https://ollama.com/download
+
+Pull the Gemma model:
 
 ```bash
-python app.py
+ollama pull gemma2:2b
 ```
 
-Example query:
+Start Ollama:
 
-```text
-What is the maximum CPU frequency of the ESP32?
+```bash
+ollama serve
 ```
 
-The chatbot retrieves the most relevant sections from the ESP32 datasheet using FAISS similarity search.
+---
 
-## How It Works
+## ▶️ Run the Application
 
-1. Load the ESP32 datasheet PDF.
-2. Split the document into text chunks.
-3. Generate vector embeddings.
-4. Store embeddings in a FAISS vector database.
-5. Retrieve the most relevant chunks based on the user's question.
-6. Return the retrieved information (or pass it to an LLM for answer generation).
+```bash
+streamlit run app.py
+```
 
-## Future Improvements
+Open your browser and visit:
 
-* Integrate Gemini or OpenAI for answer generation
-* Add a Streamlit web interface
-* Support multiple PDF documents
-* Implement conversational memory
-* Deploy the application on the cloud
+```
+http://localhost:8501
+```
 
-## Requirements
+---
 
-* Python 3.10+
-* LangChain
-* langchain-community
-* langchain-huggingface
-* langchain-text-splitters
-* sentence-transformers
-* faiss-cpu
-* pypdf
+## 💡 How It Works
 
-## Author
+1. User enters a question.
+2. Streamlit receives the input.
+3. LangChain formats the prompt.
+4. Ollama sends the prompt to the local LLM.
+5. The generated response is displayed on the web interface.
+
+---
+
+## 📸 Screenshots
+
+Add your screenshots inside the `screenshots` folder.
+
+Example:
+
+```
+screenshots/home.png
+```
+
+---
+
+## 📦 Requirements
+
+```
+streamlit
+langchain
+langchain-community
+langchain-core
+ollama
+```
+
+or install directly:
+
+```bash
+pip install streamlit langchain langchain-community langchain-core ollama
+```
+
+---
+
+## 🔮 Future Enhancements
+
+- ✅ Multi-Agent AI
+- ✅ RAG (Retrieval-Augmented Generation)
+- ✅ PDF Chat
+- ✅ Chat History
+- ✅ Memory Support
+- ✅ Web Search Integration
+- ✅ Voice Assistant
+- ✅ Image Understanding
+- ✅ Docker Deployment
+- ✅ Cloud Deployment
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome.
+
+1. Fork the repository.
+2. Create a new branch.
+
+```bash
+git checkout -b feature-name
+```
+
+3. Commit your changes.
+
+```bash
+git commit -m "Added new feature"
+```
+
+4. Push to GitHub.
+
+```bash
+git push origin feature-name
+```
+
+5. Create a Pull Request.
+
+---
+
+## 👨‍💻 Author
 
 **Aditya Jadhav**
 
-## License
+GitHub: https://github.com/YOUR_USERNAME
 
-This project is intended for educational and learning purposes.
+LinkedIn: https://linkedin.com/in/YOUR_LINKEDIN
+
+---
+
+## ⭐ Support
+
+If you found this project helpful, please consider giving it a ⭐ on GitHub.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
